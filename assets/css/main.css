@@ -29,6 +29,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+
 body {
 	line-height: 1;
 }
@@ -740,6 +741,8 @@ input, select, textarea {
 
 		ul li {
 			padding-left: 0.5em;
+			width: 300px;
+			
 		}
 
 		ul.alt {
@@ -1139,10 +1142,13 @@ input, select, textarea {
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
+			background-image: linear-gradient(to top, rgba(48, 42, 60, 0.5), rgba(70, 40, 79, 0.5)), url("../../images/overlay.png");
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
 			z-index: 2;
 		}
 
@@ -1231,6 +1237,22 @@ input, select, textarea {
 			}
 
 		}
+
+	#enunciado {
+			align-items: center;
+			color: #ffffff;
+			font-weight: 300;
+			font-size: large;
+			letter-spacing: 0.2rem;
+	}
+
+	#score {
+		align-items: center;
+		color: #ffffff;
+		font-weight: 700;
+		font-size: x-large;
+		letter-spacing: 0.2rem;
+	}
 
 /* Header */
 
@@ -1356,13 +1378,14 @@ input, select, textarea {
 				#header nav ul li a {
 					display: block;
 					min-width: 7.5rem;
-					height: 2.75rem;
 					line-height: 2.75rem;
 					padding: 0 1.25rem 0 1.45rem;
 					text-transform: uppercase;
 					letter-spacing: 0.2rem;
 					font-size: 0.8rem;
 					border-bottom: 0;
+					
+					height: fit-content;
 				}
 
 					#header nav ul li a:hover {
@@ -1376,7 +1399,6 @@ input, select, textarea {
 		#header nav.use-middle:after {
 			content: '';
 			display: block;
-			position: absolute;
 			top: 0;
 			left: calc(50% - 1px);
 			width: 1px;
@@ -1385,7 +1407,7 @@ input, select, textarea {
 		}
 
 		#header nav.use-middle ul li.is-middle {
-			border-left: 0;
+			
 		}
 
 		body.is-article-visible #header {
@@ -1655,4 +1677,9 @@ input, select, textarea {
 
 		body.is-preload #footer {
 			opacity: 0;
+		}
+
+		#header nav ul li #respuestas{
+			pointer-events: none;
+			line-height:2;
 		}
