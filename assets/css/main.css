@@ -1483,6 +1483,8 @@ input, select, textarea {
 
 			#header {
 				padding: 1.5rem 0;
+				
+				max-height: fit-content;
 			}
 
 				#header .content .inner {
@@ -1682,4 +1684,6 @@ input, select, textarea {
 		#header nav ul li #respuestas{
 			pointer-events: none;
 			line-height:2;
+			
+			height: fit-content;
 		}
