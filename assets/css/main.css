@@ -1388,9 +1388,7 @@ input, select, textarea {
 					height: fit-content;
 				}
 
-					#header nav ul li a:hover {
-						background-color: rgba(255, 255, 255, 0.075);
-					}
+					
 
 					#header nav ul li a:active {
 						background-color: rgba(255, 255, 255, 0.175);
@@ -1681,10 +1679,35 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		#header nav ul li #respuestas{
+		#header nav ul li .respuestas{
 			pointer-events: none;
 			line-height:2;
-			
 			height: fit-content;
 			padding-bottom: 15px;
 		}
+		#respuestaEntera:hover {
+			background-color: rgba(255, 255, 255, 0.075); /* Cambia el color de fondo al pasar el mouse */
+			color: white; /* Cambia el color del texto al pasar el mouse */
+			border-radius: 5px; /* Añade un borde redondeado */
+			transition: background-color 0.3s, color 0.3s; /* Añade una transición suave */
+		}
+
+
+/* Animaciones de transición */
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
