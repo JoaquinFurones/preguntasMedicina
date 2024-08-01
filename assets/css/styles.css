@@ -1,0 +1,350 @@
+@import url(fontawesome-all.min.css);
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.subject-card {
+    border: 2px solid white;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Ajusta la altura según sea necesario */
+    width: 100%; /* Asegura que las tarjetas ocupen el 100% del ancho de la columna */
+    max-width: 100%;
+    box-sizing: border-box; 
+}
+@media (max-width: 767.98px) {
+    .container {
+        display: block;
+    }
+}
+
+.subject-card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.subject-card .card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ocupa toda la altura de la tarjeta */
+    text-align: center; /* Alinea el texto horizontalmente */
+}
+
+.subject-card .card-title {
+    font-size: 2.5em; /* Aumenta el tamaño de la fuente */
+    color: white; /* Cambia el color del texto a blanco */
+}
+
+
+
+/*PREGUNTAS*/
+/* Estilo para el panel de preguntas */
+.question-panel {
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 0.25rem; /* Bordes redondeados */
+    width: 100%;
+    padding: 1rem; /* Padding interno para el contenido */
+    text-align: center;
+    font-size: x-large;
+    
+}
+
+.question-panel .card-body {
+    border-color: transparent;
+    padding-bottom: 1rem; /* Padding adicional en la parte inferior */
+}
+
+.question-panel .question-header {
+    margin-bottom: 1rem; /* Espacio debajo del encabezado */
+    font-size: 1.2em; /* Ajusta el tamaño del número de pregunta */
+    color: white; /* Color blanco para el texto */
+    font-size:xx-large;
+}
+
+.question-panel .question-text {
+    margin-bottom: 1.5rem; /* Espacio adicional debajo del enunciado */
+    color: white; /* Color blanco para el enunciado */
+}
+
+.list-group-item {
+    margin-bottom: 2rem; /* Espacio entre las respuestas */
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    color: white; /* Color blanco para el enunciado */
+}
+
+.list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro al pasar el mouse */
+    color: white; /* Mantener el color del texto blanco en hover */
+}
+
+
+.question-text {
+    padding-bottom: 10px;
+    border-bottom: 1px solid white; /* Línea blanca fina para separación */
+}
+
+
+
+
+
+
+/* Estilo para el botón de siguiente */
+.btn-next {
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid white; /* Borde blanco */
+    color: white; /* Texto blanco */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    font-size: x-large;
+}
+
+.btn-next:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro al pasar el mouse */
+    color: white; /* Mantener el color del texto blanco en hover */
+}
+
+
+/* Estilo para el botón de consulta a ChatGPT */
+#ask-chatgpt {
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid #6c757d; /* Borde gris */
+    color: white; /* Texto blanco */
+}
+
+#ask-chatgpt:hover {
+    background-color: #5a6268; /* Fondo gris oscuro al pasar el mouse */
+    border-color: #5a6268; /* Borde gris oscuro */
+}
+
+/* Estilo para la respuesta de ChatGPT */
+#chatgpt-response {
+    border: 1px solid white; /* Borde blanco alrededor de la respuesta */
+    border-radius: 0.25rem; /* Bordes redondeados */
+    padding: 1rem; /* Padding interno */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente transparente */
+}
+
+.disabled-answer {
+    pointer-events: none;
+}
+
+.correct {
+    background-color: #4CAF50 !important; /* Verde suave */
+    animation: correctAnswer 0.5s ease-in-out;
+}
+@keyframes correctAnswer {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.incorrect {
+    background-color: #F44336 !important; /* Rojo suave */
+    animation: incorrectAnswer 0.5s ease-in-out;
+}
+@keyframes incorrectAnswer {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+
+.card-hover {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.question-animation {
+    animation: scaleIn 0.5s ease-out;
+}
+
+
+
+/* Estilo para los puntos grandes alrededor de la respuesta seleccionada */
+.selected-answer {
+    position: relative;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.1em;
+}
+.selected-answer::before,
+.selected-answer::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.selected-answer::before {
+    left: -30px;
+}
+.selected-answer::after {
+    right: -30px;
+}
+
+
+
+/* Estilo para el panel de preguntas */
+.summary-panel {
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 0.25rem; /* Bordes redondeados */
+    width: 100%;
+    padding: 1rem; /* Padding interno para el contenido */
+    text-align: center;
+    font-size: x-large;
+    
+}
+
+.summary-panel #resume  {
+    margin-bottom: 1rem; /* Espacio debajo del encabezado */
+    font-size: 3em !important; /* Ajusta el tamaño del número de pregunta */
+    color: white; /* Color blanco para el texto */
+    border-bottom: 1px solid white;
+}
+
+.summary-panel #correct-answers  {
+    margin-bottom: 1rem; /* Espacio debajo del encabezado */
+    font-size: 1.2em; /* Ajusta el tamaño del número de pregunta */
+    color: white; /* Color blanco para el texto */
+    font-size:xx-large;
+}
+
+.summary-panel  #incorrect-answers {
+    margin-bottom: 1rem; /* Espacio debajo del encabezado */
+    font-size: 1.2em; /* Ajusta el tamaño del número de pregunta */
+    color: white; /* Color blanco para el texto */
+    font-size:xx-large;
+}
+
+.summary-panel #not-answered {
+    margin-bottom: 1rem; /* Espacio debajo del encabezado */
+    font-size: 1.2em; /* Ajusta el tamaño del número de pregunta */
+    color: white; /* Color blanco para el texto */
+    font-size:xx-large;
+}
+
+.summary-panel #final-grade {
+    margin-bottom: 1rem; /* Espacio debajo del encabezado */
+    font-size: 1.2em; /* Ajusta el tamaño del número de pregunta */
+    color: white; /* Color blanco para el texto */
+    font-size:xx-large;
+    border-top: 1px solid white;
+    margin-top: 1rem; /* Espacio debajo del encabezado */
+}
+
+
+
+
+/* BG */
+
+#bg {
+    -moz-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    -ms-transform: scale(1.0);
+    transform: scale(1.0);
+    -webkit-backface-visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+}
+
+    #bg:before, #bg:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #bg:before {
+        -moz-transition: background-color 2.5s ease-in-out;
+        -webkit-transition: background-color 2.5s ease-in-out;
+        -ms-transition: background-color 2.5s ease-in-out;
+        transition: background-color 2.5s ease-in-out;
+        -moz-transition-delay: 0.75s;
+        -webkit-transition-delay: 0.75s;
+        -ms-transition-delay: 0.75s;
+        transition-delay: 0.75s;
+        background-image: linear-gradient(to top, rgba(48, 42, 60, 0.5), rgba(70, 40, 79, 0.5)), url("../../images/overlay.png");
+        background-size: auto,
+256px 256px;
+        background-position: center,
+center;
+        background-repeat: no-repeat,
+repeat;
+        z-index: 2;
+    }
+
+    #bg:after {
+        -moz-transform: scale(1.125);
+        -webkit-transform: scale(1.125);
+        -ms-transform: scale(1.125);
+        transform: scale(1.125);
+        -moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out;
+        -webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
+        -ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
+        transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+        background-image: url("../../images/bg.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+
+
+
+
+
+    /* Estilo para respuestas deshabilitadas */
+.disabled-answer {
+    pointer-events: none; /* Desactiva la interactividad del puntero */
+    
+}
+   

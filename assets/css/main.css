@@ -1711,3 +1711,7 @@ input, select, textarea {
 .fade-in {
     animation: fadeIn 0.5s forwards;
 }
+
+.hidden {
+    display: none;
+}
